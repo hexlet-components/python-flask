@@ -18,3 +18,8 @@ def args():
         'args.html',
         query=request.args.lists(),
     )
+
+
+@app.route('/json/')
+def json_response():
+    return dict(request.args.lists())
