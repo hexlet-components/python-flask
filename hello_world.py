@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -11,3 +11,10 @@ def hello_world():
 def get_bottles():
     return render_template('bottles.html', bottles=range(99, 0, -1))
 
+
+@app.route('/args/')
+def args():
+    return render_template(
+        'args.html',
+        query=request.args.lists(),
+    )
