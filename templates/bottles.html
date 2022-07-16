@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>99 bottles</title>
+</head>
+<body>
+    <ul>
+    {% for bottle in bottles %}
+        {% if bottle % 10 in (4, 3, 2) and (bottle > 20 or bottle < 10) %}
+            <li>{{ bottle }} бутылки чего-то стояло на столе, одна упала и разбилась.</li>
+        {% elif bottle % 10 == 1 and bottle != 11 %}
+            <li>{{ bottle }} бутылка чего-то стояло на столе, одна упала и разбилась.</li>
+        {% else %}    
+            <li>{{ bottle }} бутылок чего-то стояло на столе, одна упала и разбилась.</li>
+        {% endif %}
+    {% endfor %}
+    <li>Нет больше бутылок на столе.</li>
+    </ul>
+</body>
+</html>
