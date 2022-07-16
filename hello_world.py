@@ -23,3 +23,8 @@ def args():
 @app.route('/json/')
 def json_response():
     return dict(request.args.lists())
+
+
+@app.route('/error')
+def error():
+    return 1 / 0
