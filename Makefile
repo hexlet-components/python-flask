@@ -1,3 +1,6 @@
+install:
+	poetry install
+
 run:
 	env FLASK_APP=hello_world.py \
 	FLASK_ENV=development \
