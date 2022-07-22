@@ -5,7 +5,6 @@ description = "A simple Flask app"
 authors = ["Hexlet Team <info@hexlet.io>"]
 license = "ISC"
 readme = "README.md"
-packages = [{include = "python_flask"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
