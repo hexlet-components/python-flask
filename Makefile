@@ -1,6 +1,14 @@
 install:
 	poetry install
 
+lint:
+	poetry run flake8
+
+test:
+	poetry run pytest -vv tests
+
+check: test lint
+
 run:
 	env FLASK_APP=hello_world.py \
 	FLASK_ENV=development \
